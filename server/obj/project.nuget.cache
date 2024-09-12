@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iT1cI1eoYg0=",
+  "dgSpecHash": "5/Gyf8KxWMCUq1y/AheK7KhoWfELVkc9L/520ChZZAzfWEL5BYihRV09XzizqpZQLCK9XCQOHXMmWxj5iOdTBQ==",
   "success": true,
   "projectFilePath": "/home/adam/Documents/Dev/youtube-comment-blocker/server/server.csproj",
   "expectedPackageFiles": [
@@ -43,10 +43,7 @@
     "/home/adam/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/home/adam/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "/home/adam/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
-    "/home/adam/.nuget/packages/system.diagnostics.diagnosticsource/8.0.0/system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
-    "/home/adam/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.5/microsoft.aspnetcore.app.ref.8.0.5.nupkg.sha512",
-    "/home/adam/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.5/microsoft.netcore.app.host.linux-x64.8.0.5.nupkg.sha512",
-    "/home/adam/.nuget/packages/microsoft.netcore.app.ref/8.0.5/microsoft.netcore.app.ref.8.0.5.nupkg.sha512"
+    "/home/adam/.nuget/packages/system.diagnostics.diagnosticsource/8.0.0/system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
