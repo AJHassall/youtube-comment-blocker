@@ -1,29 +1,49 @@
 services:
   server:
-    build: 
-      context: server
-  #   depends_on:
-  #     - db
+    build:
+      context: ./server
+    ports:
+      - 5035:5035
+      - 8080:8080
+    develop:
+      watch:
+        - action: sync
+          path: ./server
+          target: /server
+    depends_on:
+      - db
 
-  # db:
-  #   image: postgres
-  #   restart: always
-  #   # set shared memory limit when using docker-compose
-  #   shm_size: 128mb
-  #   # or set shared memory limit when deploy via swarm stack
-  #   #volumes:
-  #   #  - type: tmpfs
-  #   #    target: /dev/shm
-  #   #    tmpfs:
-  #   #      size: 134217728 # 128*2^20 bytes = 128Mb
-  #   environment:
-  #     POSTGRES_PASSWORD: example
+  db:
+    image: postgres
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    #volumes:
+    #  - type: tmpfs
+    #    target: /dev/shm
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "postgresdb"
+    ports:
+      - 5432:5432
 
-  # web:
-  #   image: web
-  #   build:
-  #     context: ./web
-  #   depends_on:
-  #     - server
-  #   ports:
-  #     - 8038:8038
+  web:
+    build:
+      context: ./web
+    depends_on:
+      - server
+    ports:
+      - 3000:3000
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: /web
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
