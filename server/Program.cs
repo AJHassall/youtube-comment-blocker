@@ -11,10 +11,20 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<BlockListContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("BlockedUserDb")));
-
+    options.UseNpgsql(builder.Configuration.GetConnectionString("BlockedUserDb"))
+    );
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<BlockListContext>();  
+
+    context.Database.Migrate();
+}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

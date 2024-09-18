@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "server\server.csproj", "{059CC9B5-317F-469B-A883-34E20B923079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "migrations", "migrations\migrations.csproj", "{0B675ACE-B61D-43A3-B810-E0517B2B1C9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{059CC9B5-317F-469B-A883-34E20B923079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{059CC9B5-317F-469B-A883-34E20B923079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{059CC9B5-317F-469B-A883-34E20B923079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B675ACE-B61D-43A3-B810-E0517B2B1C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B675ACE-B61D-43A3-B810-E0517B2B1C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B675ACE-B61D-43A3-B810-E0517B2B1C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B675ACE-B61D-43A3-B810-E0517B2B1C9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

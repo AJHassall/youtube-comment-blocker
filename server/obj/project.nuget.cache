@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1uVJ1+w79MEyv8BL/dcxPGOZHJD373j6eXRvfEYlUSgxk/zZ/uC47hnzS82MobNADTx18qsKxFAvSVg0GbLmIA==",
+  "dgSpecHash": "Ercq9WVCU60=",
   "success": true,
   "projectFilePath": "/home/adam/Documents/Dev/youtube-comment-blocker/server/server.csproj",
   "expectedPackageFiles": [
@@ -69,7 +69,10 @@
     "/home/adam/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "/home/adam/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
     "/home/adam/.nuget/packages/system.text.json/8.0.4/system.text.json.8.0.4.nupkg.sha512",
-    "/home/adam/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512"
+    "/home/adam/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512",
+    "/home/adam/.nuget/packages/microsoft.netcore.app.ref/8.0.5/microsoft.netcore.app.ref.8.0.5.nupkg.sha512",
+    "/home/adam/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.5/microsoft.aspnetcore.app.ref.8.0.5.nupkg.sha512",
+    "/home/adam/.nuget/packages/microsoft.netcore.app.host.linux-x64/8.0.5/microsoft.netcore.app.host.linux-x64.8.0.5.nupkg.sha512"
   ],
   "logs": []
 }
