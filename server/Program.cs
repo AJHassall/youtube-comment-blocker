@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -14,6 +13,17 @@ builder.Services.AddDbContext<BlockListContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("BlockedUserDb"))
     );
 
+
+
+builder.Services.AddCors(options => {
+    options.AddPolicy("policy", pb =>{
+        //pb.AllowAnyOrigin();
+        pb.WithOrigins("https://www.youtube.com");
+        pb.AllowAnyHeader();
+        pb.AllowAnyMethod();
+        //pb.AllowCredentials();
+    });
+});
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -25,7 +35,6 @@ using (var scope = app.Services.CreateScope())
     context.Database.Migrate();
 }
 
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -36,4 +45,5 @@ if (app.Environment.IsDevelopment())
 //app.UseHttpsRedirection();
 
 app.MapControllers();
+app.UseCors("policy");
 app.Run();

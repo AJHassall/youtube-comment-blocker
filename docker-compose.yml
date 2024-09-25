@@ -16,6 +16,8 @@ services:
           target: /server
     depends_on:
       - db
+    stdin_open: true
+    tty: true
 
   db:
     image: postgres
@@ -38,22 +40,24 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
 
 
-  web:
-    build:
-      context: ./web
-    depends_on:
-      - server
-    ports:
-      - 3000:3000
-    develop:
-      watch:
-        - action: sync
-          path: ./web
-          target: /web
-          ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
+  # web:
+  #   build:
+  #     context: ./web
+  #   depends_on:
+  #     - server
+  #   ports:
+  #     - 3000:3000
+  #   develop:
+  #     watch:
+  #       - action: sync
+  #         path: ./web
+  #         target: /web
+  #         ignore:
+  #           - node_modules/
+  #       - action: rebuild
+  #         path: package.json
+  #   stdin_open: true
+  #   tty: true
 
 volumes:
   postgres-data:

@@ -17,41 +17,20 @@ namespace server
         [HttpGet]
         public ActionResult<IEnumerable<BlockedUser>> Get()
         {
-            var BlockedUser = _dbContext.BlockedUsers.Find(1);
-
-            if (BlockedUser is null)
-            {
-                return NotFound();
-            }
+            var BlockedUser = _dbContext.BlockedUsers.ToList();
 
             return Ok(BlockedUser);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Put([FromBody] string username)
         {
             var BlockedUser = new BlockedUser(){
-                Name = "test"
+                Name = username,
             };
 
             _dbContext.Add(BlockedUser);
             _dbContext.SaveChanges();
-        }
-
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
